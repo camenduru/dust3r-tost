@@ -14,6 +14,7 @@ RUN apt update -y && add-apt-repository -y ppa:git-core/ppa && apt update -y && 
 USER camenduru
 
 RUN pip install -q opencv-python imageio imageio-ffmpeg ffmpeg-python av xformers==0.0.25 runpod \
+    torch==2.1.0+cu121 torchvision==0.16.0+cu121 torchaudio==2.1.0+cu121 torchtext==0.16.0 torchdata==0.7.0 --extra-index-url https://download.pytorch.org/whl/cu121 \
     tyro diffusers dearpygui einops accelerate lpips pygltflib rembg[gpu,cli] trimesh kiui xatlas roma plyfile \
     https://github.com/camenduru/wheels/releases/download/colab/curope-0.0.0-cp310-cp310-linux_x86_64.whl
 
