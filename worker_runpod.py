@@ -23,6 +23,10 @@ pl.ion()
 
 import runpod
 
+discord_token = os.getenv('com_camenduru_discord_token')
+web_uri = os.getenv('com_camenduru_web_uri')
+web_token = os.getenv('com_camenduru_web_token')
+
 torch.backends.cuda.matmul.allow_tf32 = True  # for gpu >= Ampere and pytorch >= 1.12
 batch_size = 1
 
@@ -159,8 +163,8 @@ def download_image(url):
         print(f"Error downloading image: {e}")
         return None
 
-def generate(command):
-    values = json.loads(command)
+def generate(input):
+    values = input["input"]
     images = values['images']
     filelist = []
     for image in images:
