@@ -22,6 +22,12 @@
       "items": {
         "type": "object",
         "properties": {
+          "upload": {
+            "type": "string",
+            "widget": "upload",
+            "upload_url": "https://litterbox.catbox.moe/resources/internals/api.php",
+            "property": "url"
+          },
           "url": {
             "type": "string",
             "description": "Input Image URL",
